@@ -48,6 +48,7 @@ public class CustomerDAOImp implements CustomerDAO {
 				c.setGender(rs.getString(5));
 				c.setCity(rs.getString(6));
 			}
+			con.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
