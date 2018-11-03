@@ -7,7 +7,7 @@
 <title>Registration Page</title>
 </head>
 <body>
-	<form name="loginForm" action="loginRegister" method="post">
+	<form action="loginRegister" method="post">
 		<table
 			style="background-color: lightgreen; margin-left: 20px; margin-left: 20px">
 			<tr>
@@ -28,7 +28,7 @@
 			</tr>
 			<tr>
 				<td>Re-Type Password:</td>
-				<td><input type="password" name="password1" size="30" /></td>
+				<td><input type="password" name="password2" size="30" /></td>
 			</tr>
 			<tr>
 				<td>Email Address:</td>
@@ -51,7 +51,7 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td><input type="submit" name="submit" value="Registration" /></td>
+				<td><input type="submit" name="submit" value="register" /></td>
 			</tr>
 		</table>
 	</form>

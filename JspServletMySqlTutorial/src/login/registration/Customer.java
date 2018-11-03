@@ -8,6 +8,7 @@ public class Customer {
 	private String email;
 	private String gender;
 	private String city;
+	
 	public String getName() {
 		return name;
 	}

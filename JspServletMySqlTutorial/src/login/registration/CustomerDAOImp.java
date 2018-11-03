@@ -2,6 +2,7 @@ package login.registration;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class CustomerDAOImp implements CustomerDAO {
 
@@ -30,12 +31,27 @@ public class CustomerDAOImp implements CustomerDAO {
 
 	@Override
 	public Customer getCustomer(String username, String password) {
-		try {
+		Customer c = new Customer();
 
+		try {
+			con = MyConnectionProvider.getConnection();
+			ps = con.prepareStatement("select * from customer where username=? and password=?");
+			ps.setString(1, username);
+			ps.setString(2, password);
+			
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				c.setName(rs.getString(1));
+				c.setUserName(rs.getString(2));
+				c.setPassword(rs.getString(3));
+				c.setEmail(rs.getString(4));
+				c.setGender(rs.getString(5));
+				c.setCity(rs.getString(6));
+			}
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return null;
+		return c;
 	}
 
 }

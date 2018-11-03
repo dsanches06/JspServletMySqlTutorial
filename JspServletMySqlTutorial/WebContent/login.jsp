@@ -7,8 +7,15 @@
 <title>Login Page</title>
 </head>
 <body>
-	<form name="loginForm" action="loginRegister" method="post">
+	<form action="loginRegister" method="post">
 		<table style="background-color: skyblue; margin-left: 20px; margin-left: 20px">
+			<tr>
+				<td>
+				<h3 style="color:red">${message}</h3>
+				<h3 style="color:green">${sucessMessage}</h3>
+				</td>
+				<td></td>
+			</tr>
 			<tr>
 				<td><h3 style="color: red">Login Page !!!</h3></td>
 				<td></td>
@@ -19,10 +26,10 @@
 			</tr>
 			<tr>
 				<td>Password:</td>
-				<td><input type="password" name="password" size="30" /></td>
+				<td><input type="password" name="password1" size="30" /></td>
 			</tr>
 			<tr>
-				<td><input type="submit" name="submit" value="Login" /></td>
+				<td><input type="submit" name="submit" value="login" /></td>
 				<td><a href="register.jsp">Registration</a></td>
 			</tr>
 		</table>
