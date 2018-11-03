@@ -37,6 +37,7 @@ public class LoginRegister extends HttpServlet {
 		String submitType = request.getParameter("submit");
 		Customer c = cd.getCustomer(userName, password);
 		if (submitType.equals("login") && c != null && c.getName() != null) {
+			request.setAttribute("welcomessage", c.getUserName());
 			request.getRequestDispatcher("welcome.jsp").forward(request, response);
 		} else if (submitType.equals("register")) {
 			c.setName(name);

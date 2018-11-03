@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Welcome Page</title>
 </head>
-<body style="color:yellow">
-<h1>Hi ${message} !!! We welcome you !!!</h1>
+<body style="background-color:yellow">
+<h1>Hi ${"welcomessage} !!! We welcome you !!!</h1>
 </body>
 </html>

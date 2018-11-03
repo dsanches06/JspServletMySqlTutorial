@@ -12,9 +12,10 @@ public class CustomerDAOImp implements CustomerDAO {
 	@Override
 	public int insertCustomer(Customer c) {
 		int status = 0;
+		String query = "insert into customer(_name, _username, _password, _email, _gender, _city) VALUES (?,?,?,?,?,?)";
 		try {
 			con = MyConnectionProvider.getConnection();
-			ps = con.prepareStatement("insert into customer values(?,?,?,?,?,?)");
+			ps = con.prepareStatement(query);
 			ps.setString(1, c.getName());
 			ps.setString(2, c.getUserName());
 			ps.setString(3, c.getPassword());
@@ -32,10 +33,10 @@ public class CustomerDAOImp implements CustomerDAO {
 	@Override
 	public Customer getCustomer(String username, String password) {
 		Customer c = new Customer();
-
+		String query = "select * from customer where _username=? and _password=?";
 		try {
 			con = MyConnectionProvider.getConnection();
-			ps = con.prepareStatement("select * from customer where username=? and password=?");
+			ps = con.prepareStatement(query);
 			ps.setString(1, username);
 			ps.setString(2, password);
 			
